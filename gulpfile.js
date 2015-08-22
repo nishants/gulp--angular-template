@@ -9,9 +9,9 @@ var gulp = require('gulp'),
     ],
 
     indexHtmlComponents = [
-      './pages/index/before.html',
-      './pages/index/loader.html',
-      './pages/index/after.html'
+      './index/before.html',
+      './index/loader.html',
+      './index/after.html'
     ],
 
     appJsComponents = [
