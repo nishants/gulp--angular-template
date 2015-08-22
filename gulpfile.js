@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     shell = require('gulp-shell'),
     del = require('del'),
 
-    appCssComponents = [
+    homeCssComponents = [
       './style/loader.css',
       './style/properties.css'
     ],
@@ -34,7 +34,7 @@ var gulp = require('gulp'),
 
     cleanupFiles = [
       'index.html',
-      'app.css',
+      'home.css',
       'app.js',
       'app.html'
     ];
@@ -53,8 +53,8 @@ gulp.task('assemble-app-html', function () {
       .pipe(gulp.dest('./'));
 });
 gulp.task('assemble-css', function () {
-  return gulp.src(appCssComponents)
-      .pipe(concat('app.css'))
+  return gulp.src(homeCssComponents)
+      .pipe(concat('home.css'))
       .pipe(gulp.dest('./'));
 });
 
