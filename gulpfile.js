@@ -24,7 +24,7 @@ var gulp = require('gulp'),
 gulp.task('clean', function () {
   del([
     'index.html',
-    'style/app.css'
+    'app.css'
   ]);
 });
 
@@ -35,7 +35,7 @@ gulp.task('run', shell.task([
 gulp.task('assemble-css', function () {
   return gulp.src(appCssComponents)
       .pipe(concat('app.css'))
-      .pipe(gulp.dest('./style'));
+      .pipe(gulp.dest('./'));
 });
 
 gulp.task('assemble-html', function () {
