@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
-    concat = require('gulp-concat'),
+    concat = require('gulp-continuous-concat'),
     shell = require('gulp-shell'),
+    watch = require('gulp-watch'),
     del = require('del'),
 
     homeCssComponents = [
@@ -43,7 +44,14 @@ var gulp = require('gulp'),
       'app.js',
       'app.html',
       'app.css',
-    ];
+    ],
+
+    assemble = function(components, file, dir){
+      return gulp.src(components)
+          .pipe(watch(components))
+          .pipe(concat(file))
+          .pipe(gulp.dest(dir));
+    };
 
 gulp.task('clean', function () {
   del(cleanupFiles);
@@ -54,33 +62,23 @@ gulp.task('run', shell.task([
 ]));
 
 gulp.task('assemble-app-css', function () {
-  return gulp.src(appCSSComponents)
-      .pipe(concat('app.css'))
-      .pipe(gulp.dest('./'));
+  return assemble(appCSSComponents, 'app.css', './');
 });
 
 gulp.task('assemble-app-html', function () {
-  return gulp.src(appHtmlComponents)
-      .pipe(concat('app.html'))
-      .pipe(gulp.dest('./'));
+  return assemble(appHtmlComponents, 'app.html', './');
 });
 
 gulp.task('assemble-css', function () {
-  return gulp.src(homeCssComponents)
-      .pipe(concat('home.css'))
-      .pipe(gulp.dest('./'));
+  return assemble(homeCssComponents, 'home.css', './');
 });
 
 gulp.task('assemble-html', function () {
-  return gulp.src(indexHtmlComponents)
-      .pipe(concat('index.html'))
-      .pipe(gulp.dest('./'));
+  return assemble(indexHtmlComponents, 'index.html', './');
 });
 
 gulp.task('assemble-app-js', function () {
-  return gulp.src(appJsComponents)
-      .pipe(concat('app.js'))
-      .pipe(gulp.dest('./'));
+  return assemble(appJsComponents, 'app.js', './');
 });
 
 gulp.task('default', defaultTasks);
