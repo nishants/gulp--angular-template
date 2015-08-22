@@ -14,6 +14,10 @@ var gulp = require('gulp'),
       './index/after.html'
     ],
 
+    appHtmlComponents = [
+      "./app/**/*.html"
+    ],
+
     appJsComponents = [
       "./app/init.js",
       "./app/**/*.js"
@@ -23,6 +27,7 @@ var gulp = require('gulp'),
       'clean',
       'assemble-css',
       'assemble-html',
+      'assemble-app-html',
       'assemble-app-js',
       'run'
     ],
@@ -30,7 +35,8 @@ var gulp = require('gulp'),
     cleanupFiles = [
       'index.html',
       'app.css',
-      'app.js'
+      'app.js',
+      'app.html'
     ];
 
 gulp.task('clean', function () {
@@ -41,6 +47,11 @@ gulp.task('run', shell.task([
   'node runner.js'
 ]));
 
+gulp.task('assemble-app-html', function () {
+  return gulp.src(appHtmlComponents)
+      .pipe(concat('app.html'))
+      .pipe(gulp.dest('./'));
+});
 gulp.task('assemble-css', function () {
   return gulp.src(appCssComponents)
       .pipe(concat('app.css'))
