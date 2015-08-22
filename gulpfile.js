@@ -11,15 +11,22 @@ var gulp = require('gulp'),
     indexHtmlComponents = [
       './pages/index/before.html',
       './pages/index/loader.html',
-      './pages/index/after.html'],
+      './pages/index/after.html'
+    ],
+
+    appJsComponents = [
+      "./app/init.js",
+      "./app/**/*.js"
+    ],
 
     defaultTasks = [
-      'clean', 
+      'clean',
       'assemble-css',
       'assemble-html',
       'assemble-app-js',
       'run'
     ],
+
     cleanupFiles = [
       'index.html',
       'app.css',
@@ -47,7 +54,7 @@ gulp.task('assemble-html', function () {
 });
 
 gulp.task('assemble-app-js', function () {
-  return gulp.src(["./app/init.js", "./app/**/*.js"])
+  return gulp.src(appJsComponents)
       .pipe(concat('app.js'))
       .pipe(gulp.dest('./'));
 });
