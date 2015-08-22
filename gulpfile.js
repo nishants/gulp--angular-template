@@ -10,7 +10,6 @@ var gulp = require('gulp'),
 
     indexHtmlComponents = [
       './pages/index/before.html',
-      './pages/index/app.html',
       './pages/index/loader.html',
       './pages/index/after.html'],
 
