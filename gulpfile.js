@@ -1,5 +1,7 @@
 var gulp = require('gulp'),
     concat = require('gulp-concat'),
+    shell = require('gulp-shell'),
+
     appCssComponents = [
       './style/loader.css',
       './style/properties.css'
@@ -11,19 +13,22 @@ var gulp = require('gulp'),
       './pages/index/loader.html',
       './pages/index/after.html'],
 
-    createAppCss = function () {
-      return gulp.src(appCssComponents)
-          .pipe(concat('app.css'))
-          .pipe(gulp.dest('./style'));
-    },
+    defaultTasks = ["compile-css", "compile-html", "run",];
 
-    createIndexHtml = function () {
-      return gulp.src(indexHtmlComponents)
-          .pipe(concat('index.html'))
-          .pipe(gulp.dest('./'));
-    };
+gulp.task('run', shell.task([
+  'node runner.js'
+]));
 
-gulp.task('default', function () {
-  createIndexHtml();
-  createAppCss();
+gulp.task('compile-css', function () {
+  return gulp.src(appCssComponents)
+      .pipe(concat('app.css'))
+      .pipe(gulp.dest('./style'));
 });
+
+gulp.task('compile-html', function () {
+  return gulp.src(indexHtmlComponents)
+      .pipe(concat('index.html'))
+      .pipe(gulp.dest('./'));
+});
+
+gulp.task('default', defaultTasks);
