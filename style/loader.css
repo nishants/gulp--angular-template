@@ -1,7 +1,6 @@
 /* courtesy : http://cssload.net/ */
 .cssload-tetrominos {
   position: absolute;
-  top:80%;
   left:30%;
   transform: translate(-258px, -264px);
   -o-transform: translate(-258px, -264px);
