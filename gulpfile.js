@@ -19,14 +19,15 @@ var gulp = require('gulp'),
       'assemble-html',
       'assemble-app-js',
       'run'
+    ],
+    cleanupFiles = [
+      'index.html',
+      'app.css',
+      'app.js'
     ];
 
 gulp.task('clean', function () {
-  del([
-    'index.html',
-    'app.css',
-    'app.js'
-  ]);
+  del(cleanupFiles);
 });
 
 gulp.task('run', shell.task([
