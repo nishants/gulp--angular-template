@@ -18,6 +18,10 @@ var gulp = require('gulp'),
       "./app/**/*.html"
     ],
 
+    appCSSComponents = [
+      "./app/**/*.css"
+    ],
+
     appJsComponents = [
       "./app/init.js",
       "./app/**/*.js"
@@ -27,6 +31,7 @@ var gulp = require('gulp'),
       'clean',
       'assemble-css',
       'assemble-html',
+      'assemble-app-css',
       'assemble-app-html',
       'assemble-app-js',
       'run'
@@ -36,7 +41,8 @@ var gulp = require('gulp'),
       'index.html',
       'home.css',
       'app.js',
-      'app.html'
+      'app.html',
+      'app.css',
     ];
 
 gulp.task('clean', function () {
@@ -47,11 +53,18 @@ gulp.task('run', shell.task([
   'node runner.js'
 ]));
 
+gulp.task('assemble-app-css', function () {
+  return gulp.src(appCSSComponents)
+      .pipe(concat('app.css'))
+      .pipe(gulp.dest('./'));
+});
+
 gulp.task('assemble-app-html', function () {
   return gulp.src(appHtmlComponents)
       .pipe(concat('app.html'))
       .pipe(gulp.dest('./'));
 });
+
 gulp.task('assemble-css', function () {
   return gulp.src(homeCssComponents)
       .pipe(concat('home.css'))

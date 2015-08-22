@@ -1,7 +1,10 @@
 .idea
 *.DS_Store
-index.html
 node_modules
+
+index.html
+home.css
+
 app.css
 app.js
 app.html
