@@ -17,13 +17,15 @@ var gulp = require('gulp'),
       'clean', 
       'assemble-css',
       'assemble-html',
+      'assemble-app-js',
       'run'
     ];
 
 gulp.task('clean', function () {
   del([
     'index.html',
-    'app.css'
+    'app.css',
+    'app.js'
   ]);
 });
 
@@ -40,6 +42,12 @@ gulp.task('assemble-css', function () {
 gulp.task('assemble-html', function () {
   return gulp.src(indexHtmlComponents)
       .pipe(concat('index.html'))
+      .pipe(gulp.dest('./'));
+});
+
+gulp.task('assemble-app-js', function () {
+  return gulp.src(["./app/init.js", "./app/**/*.js"])
+      .pipe(concat('app.js'))
       .pipe(gulp.dest('./'));
 });
 
