@@ -1,0 +1,17 @@
+.full-height{
+  height: 100vh
+}
+.full-width{
+  width: 100vw
+}
+.bg-white{
+  background-color: #ffffff;
+}
+.opacity-7{
+  opacity : 0.75;
+}
+.modal-layer{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
