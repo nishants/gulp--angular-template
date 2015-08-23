@@ -5,11 +5,9 @@
     <!--flip animation courtesy : http://callmenick.com/post/css-transitions-transforms-animations-flipping-card-->
     <div ng-repeat="item in items" class="card effect__hover surface">
         <div class="card__front bg-grey">
-            <span class="card__text">{{item.name}}</span>
-        </div>
-        <div class="card__back">
-            <span class="card__text">{{item.name}}</span>
+            <h3 class="card__text">{{item.name}}</h3>
             <p class="card__text">{{item.description}}</p>
         </div>
+        <div class="card__back" ng-include="previewFor(item)"></div>
     </div>
 </div>
