@@ -8,6 +8,11 @@
             <h3 class="card__text">{{item.name}}</h3>
             <p class="card__text">{{item.description}}</p>
         </div>
-        <div class="card__back" ng-include="previewFor(item)"></div>
+        <div class="card__back" ng-include="item.preview">
+            <h3 class="card__text">
+                <!-- Placeholder, while the preview is being fetched-->
+                {{item.description}}
+            </h3>
+        </div>
     </div>
 </div>

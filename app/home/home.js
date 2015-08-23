@@ -8,8 +8,5 @@
           $scope.items = books;
         }
     );
-    $scope.previewFor = function(item){
-      return "books/preview/" + item.id +".html";
-    };
   }]);
 }).call(this);
