@@ -19,7 +19,7 @@
   left: 0;
 }
 .bg-grey{
-  background-color: grey;
+  background-color: rgba(128, 128, 128, 0.17);
 }
 .txt-light-grey{
   color: #d5d5d5;
