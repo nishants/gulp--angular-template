@@ -1,10 +1,16 @@
 #search-bar{
   padding: 2px 5% 2px 5%;
   min-height: 30px;
+  margin-bottom: 10px;
 }
-
 #profile-pic{
   vertical-align: middle;
-  margin: 2px;
-  margin-left: 5px;
+  margin: 2px 2px 2px 5px;
+}
+#brand{
+  padding: 0 10px 0 10px;
+  background-color: rgba(0, 19, 253, 0.07)
+}
+#search{
+  min-width: 25vw;
 }
