@@ -1,0 +1,13 @@
+{
+  "books": [
+    {
+      "name": "java i/o",
+      "description" : "Input output with java",
+      "preview"     : "books/preview/javaio.html",
+      "tags"        : [ "java", "InputStream", "java io",
+                        "files", "file handling", "FileInputStream",
+                        "OutputStream", "Reader", "FileOutputStream"],
+      "chapters": []
+    }
+  ]
+}
