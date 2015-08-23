@@ -1,0 +1,12 @@
+.item{
+  color: red;
+  display: inline-block;
+  min-width: 400px;
+  min-height: 300px;
+  background-color: green;
+  margin: 5px;
+}
+
+#home-page{
+  /*background-color: green;*/
+}
