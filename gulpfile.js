@@ -16,6 +16,7 @@ var gulp = require('gulp'),
     ],
 
     appHtmlComponents = [
+      "./app/search/*.html",
       "./app/**/*.html"
     ],
 
