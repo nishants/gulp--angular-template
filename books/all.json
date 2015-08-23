@@ -1,12 +1,20 @@
 {
   "books": [
     {
-      "name": "java i/o",
+      "id"  : "java-io",
+      "name": "Java I/O",
       "description" : "Input output with java",
-      "preview"     : "books/preview/javaio.html",
       "tags"        : [ "java", "InputStream", "java io",
                         "files", "file handling", "FileInputStream",
-                        "OutputStream", "Reader", "FileOutputStream"],
+                        "OutputStream", "Reader", "FileOutputStream"]
+    },
+    {
+      "id"  : "tdd-intro-java",
+      "name": "Intro to TDD (java)",
+      "description" : "test driven development for java first timers",
+      "tags"        : [ "java", "InputStream", "java io",
+        "files", "file handling", "FileInputStream",
+        "OutputStream", "Reader", "FileOutputStream"],
       "chapters": []
     }
   ]
