@@ -1,7 +1,9 @@
 (function(){
   "use strict";
 
-  app.controller("HomeController", ["$scope", function($scope){
+  app.controller("HomeController", ["$scope", "userInterface", function($scope, userInterface){
+    userInterface.hideLoader();
+
     $scope.items = [
         {
           name: "java i/o",
