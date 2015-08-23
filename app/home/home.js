@@ -1,26 +1,12 @@
-(function(){
+(function () {
   "use strict";
 
-  app.controller("HomeController", ["$scope", "userInterface", function($scope, userInterface){
+  app.controller("HomeController", ["$scope", "userInterface", "bookStore", function ($scope, userInterface, bookStore) {
     userInterface.hideLoader();
 
-    $scope.items = [
-        {
-          name: "java i/o",
-          description: "QuickBook"
-        },
-        {
-          name: "unit testingangular controllerswith jasmine",
-          description: "QuickBook"
-        },
-        {
-          name: "test driven developmentfor java first timers",
-          description: "QuickBook"
-        },
-        {
-          name: "test driven developmentfor java developers",
-          description: "QuickBook"
+    bookStore.allBooks(function (books) {
+          $scope.items = books;
         }
-    ]
+    );
   }]);
 }).call(this);
