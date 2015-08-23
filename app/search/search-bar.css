@@ -1,0 +1,10 @@
+#search-bar{
+  padding: 2px 5% 2px 5%;
+  min-height: 30px;
+}
+
+#profile-pic{
+  vertical-align: middle;
+  margin: 2px;
+  margin-right: 5px;
+}
