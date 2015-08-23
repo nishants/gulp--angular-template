@@ -1,5 +1,6 @@
 <div id="search-bar"
-     class="surface full-width  bg-grey opacity-7">
+     class="surface full-width  bg-grey opacity-7"
+        ng-controller="SearchController">
 
     <span id="brand" class="on-surface pull-left txt-light-grey">
         <a href="http://amoeba.social">amoeba.social</a>
@@ -14,5 +15,6 @@
     <input id="search"
            type="text"
            class="on-surface pull-right"
-           placeholder="search">
+           placeholder="search"
+            ng-model="search.keyword">
 </div>
