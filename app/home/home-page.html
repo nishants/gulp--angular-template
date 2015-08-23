@@ -3,15 +3,15 @@
      class="full-height full-width">
 
     <!--flip animation courtesy : http://callmenick.com/post/css-transitions-transforms-animations-flipping-card-->
-    <div ng-repeat="item in items" class="card effect__hover surface">
+    <div ng-repeat="book in books" class="card effect__hover surface">
         <div class="card__front bg-grey">
-            <h3 class="card__text">{{item.name}}</h3>
-            <p class="card__text">{{item.description}}</p>
+            <h3 class="card__text">{{book.name}}</h3>
+            <p class="card__text">{{book.description}}</p>
         </div>
-        <div class="card__back" ng-include="item.preview">
+        <div class="card__back" ng-include="book.preview">
             <h3 class="card__text">
                 <!-- Placeholder, while the preview is being fetched-->
-                {{item.description}}
+                {{book.description}}
             </h3>
         </div>
     </div>
