@@ -2,6 +2,7 @@
   "use strict"
   var http = require('http'),
       fs = require('fs'),
+      defaultDelay = 1000,
 
       encoding = "utf8",
 
@@ -20,7 +21,10 @@
         res.writeHead(404, responseHead);
       } else {
         res.writeHead(200, responseHead);
-        res.end(contents);
+        setTimeout(function(){
+          res.end(contents);
+        }, defaultDelay);
+        ;
       }
     });
 
