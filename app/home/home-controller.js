@@ -4,9 +4,6 @@
   app.controller("HomeController", ["$scope", "userInterface", "bookStore", function ($scope, userInterface, bookStore) {
     userInterface.hideLoader();
 
-    bookStore.allBooks(function (books) {
-          $scope.items = books;
-        }
-    );
+    $scope.items = bookStore.filteredBooks;
   }]);
 }).call(this);
