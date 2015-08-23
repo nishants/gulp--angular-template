@@ -12,9 +12,7 @@
       "id"  : "tdd-intro-java",
       "name": "Intro to TDD (java)",
       "description" : "test driven development for java first timers",
-      "tags"        : [ "java", "InputStream", "java io",
-        "files", "file handling", "FileInputStream",
-        "OutputStream", "Reader", "FileOutputStream"],
+      "tags"        : ["java", "tdd", "test driven development", "extreme programming"],
       "chapters": []
     }
   ]

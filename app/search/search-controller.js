@@ -1,11 +1,10 @@
 (function () {
   "use strict";
 
-  app.controller("SearchController", ["$scope", "bookStore", function ($scope, bookStore) {
+  app.controller("SearchController", ["$scope", "userInterface", function ($scope, userInterface) {
 
     $scope.$watch("search.keyword", function(keyword){
-      //bookStore.searchFor(keyword);
-      console.log(keyword);
+      userInterface.searchFor(keyword);
     })
   }]);
 }).call(this);

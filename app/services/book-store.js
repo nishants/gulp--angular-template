@@ -4,10 +4,19 @@
 
     var store = {
           filteredBooks: [],
-          allBooks:[]
+          allBooks: [],
+          filterBy: function (tag) {
+            clear(store.filteredBooks);
+            store.allBooks.forEach(function(book){
+              if(book.hasTag(tag)){
+                store.filteredBooks.push(book);
+              }
+            });
+          }
         },
-        clear = function(arr){
-          while(arr.length > 0) {arr.pop();}
+
+        clear = function (arr) {
+          while (arr.length > 0) {arr.pop();}
         },
         error = function (error) {
           alert("Failed to connect : " + error);
@@ -16,7 +25,7 @@
           var books = BookFactory.parse(response.data.books);
           clear(store.allBooks);
           clear(store.filteredBooks);
-          for(var i = 0; i < books.length; i++){
+          for (var i = 0; i < books.length; i++){
             store.allBooks.push(books[i]);
             store.filteredBooks.push(books[i]);
           }

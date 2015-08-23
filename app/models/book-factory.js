@@ -7,8 +7,10 @@
           this.id = data.id;
           this.name = data.name;
           this.description = data.description;
-          this.preview = "books/preview/" + data.id + ".html"
+          this.preview = "books/preview/" + data.id + ".html";
+          this.tags = data.tags;
         },
+
 
         parseToBooks = function (booksData) {
           var books = [];
@@ -18,6 +20,14 @@
           return books;
         };
 
+    Book.prototype.hasTag = function(string){
+      for(var i =0; i < this.tags.length; i++){
+        if(this.tags[i].indexOf(string) != -1){
+          return true;
+        }
+      }
+      return false;
+    };
 
     return {
       parse: parseToBooks
